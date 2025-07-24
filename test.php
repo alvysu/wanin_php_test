@@ -19,11 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<h3>Who are you, $name?</h3>";
     }
 }
-echo "<h2>PHP is Fun!</h2>";
-echo "Hello world!<br>";
-echo "I'm about to learn PHP!<br>";
-echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+
 ?>
+<?php  
+$cars = array("Volvo","BMW","Toyota");
+var_dump($cars);
+?>  
 
 </body>
 </html>

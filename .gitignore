@@ -1,0 +1,8 @@
+# 忽略開發中不需上傳的目錄/檔案
+node_modules/
+vendor/
+.env
+*.log
+.DS_Store
+.vscode/
+.idea/

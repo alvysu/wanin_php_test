@@ -7,12 +7,17 @@ $logFile = $isLocal
     ? __DIR__ . '/../tmp/status_log.txt'
     : '/var/www/html/tmp/status_log.txt';
 
-// ✅ 僅在本機執行 mkdir，部署環境不能寫入 /var/www/html
+// ✅ 僅在本機建立資料夾
 if ($isLocal) {
     $logDir = dirname($logFile);
     if (!is_dir($logDir)) {
-        mkdir($logDir, 0777, true); // 只在本機建立資料夾
+        mkdir($logDir, 0777, true);
     }
+}
+
+// ✅ 若 log 檔不存在，先建立空檔案（避免 Render 報錯）
+if (!file_exists($logFile)) {
+    file_put_contents($logFile, "");
 }
 
 

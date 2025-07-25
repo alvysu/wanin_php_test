@@ -23,7 +23,7 @@
         <li><a href="log_viewer.php">Log Viewer - 錯誤紀錄</a></li>
         <li><a href="protocol_check.php">HTTP/HTTPS 協議</a></li>
         <li><a href="request_response.php">Request & Response 生命週期</a></li>
-        <li><a href="status_demo.php">status_demo.php</a></li>
+        <li><a href="status_demo.php">狀態碼（200, 404, 500 等）</a></li>
         <li><a href="students_ui.html">HTTP 方法（GET, POST, PUT, DELETE）</a></li>
         <li><a href="test.php">test</a></li>
     </ul>

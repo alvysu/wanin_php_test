@@ -1,8 +1,18 @@
 <?php
 // status_demo.php
 
-// === ✅ 1. 設定錯誤紀錄 ===
-$logFile = __DIR__ . '/tmp/status_log.txt';
+// ✅ 自動判斷 log 寫入路徑（本機 or Render）
+$isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
+$logFile = $isLocal
+    ? __DIR__ . '/../tmp/status_log.txt'
+    : '/var/www/html/tmp/status_log.txt';
+
+// ✅ 自動建立路徑（避免 log 寫入失敗）
+if (!file_exists(dirname($logFile))) {
+    mkdir(dirname($logFile), 0777, true);
+}
+
+
 
 // 一般 PHP 錯誤
 set_error_handler(function($errno, $errstr, $errfile, $errline) use ($logFile) {

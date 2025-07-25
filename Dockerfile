@@ -2,7 +2,7 @@
 FROM php:8.2-apache
 
 # 複製你的程式碼到容器中
-# COPY first_level/ /var/www/html/
+COPY first_level/ /var/www/html/
 COPY tmp/ /var/www/html/tmp/
 
 # 啟用 Apache mod_rewrite（如有需要）

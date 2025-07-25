@@ -1,18 +1,24 @@
 <?php
-// log_viewer.php
-
-// 自動判斷是在本機還是部署環境
+// 判斷本地環境
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
+
+// 決定 log 路徑
 $logFile = $isLocal
     ? __DIR__ . '/../tmp/status_log.txt'
-    : __DIR__ . '/tmp/status_log.txt';   // ← 用 __DIR__ 相對就不會錯
-// ✅ 若資料夾不存在，自動建立
-if (!file_exists(dirname($logFile))) {
-    mkdir(dirname($logFile), 0777, true);
+    : '/var/www/html/tmp/status_log.txt';
+
+// ⚠️ 只在本地才 mkdir
+if ($isLocal) {
+    $logDir = dirname($logFile);
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0777, true);
+    }
 }
 
+// 讀取 log
 $logs = file_exists($logFile) ? file($logFile, FILE_IGNORE_NEW_LINES) : [];
 ?>
+
 
 
 <!DOCTYPE html>

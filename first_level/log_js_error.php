@@ -5,7 +5,9 @@
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
 $logFile = $isLocal
     ? __DIR__ . '/../tmp/status_log.txt'
-    : __DIR__ . '/tmp/status_log.txt';   // ← 用 __DIR__ 相對就不會錯
+    : '/var/www/html/tmp/status_log.txt';
+
+
 // ✅ 若資料夾不存在，自動建立
 if (!file_exists(dirname($logFile))) {
     mkdir(dirname($logFile), 0777, true);

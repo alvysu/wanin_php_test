@@ -7,8 +7,8 @@ COPY . /var/www/html/
 # 啟用 Apache mod_rewrite（如果你需要）
 RUN a2enmod rewrite
 
-# 設定權限（如有 logs 資料夾）
-RUN mkdir -p /var/www/html/logs && chmod -R 777 /var/www/html/logs
+# 設定權限（如有 tmp 資料夾）
+RUN mkdir -p /var/www/html/tmp && chmod -R 777 /var/www/html/tmp
 
 # 開放 HTTP Port
 EXPOSE 80

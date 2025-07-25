@@ -31,7 +31,7 @@ $ip = $_SERVER['REMOTE_ADDR'];
 
     <h3>📝 測試方式</h3>
     <ol>
-        <li>直接訪問：<code>http://localhost:8081/request_response.php?name=Alvy</code></li>
+        <li>直接訪問：<code>https://wanin-php-test.onrender.com/first_level/request_response.php?name=Alvy</code></li>
         <li>或使用下方表單測試 POST 請求：</li>
     </ol>
 

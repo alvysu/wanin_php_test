@@ -1,5 +1,5 @@
 <?php
-$logFile = __DIR__ . '/tmp/status_log.txt';
+$logFile = __DIR__ . '/../tmp/status_log.txt';
 
 $logs = file_exists($logFile) ? file($logFile, FILE_IGNORE_NEW_LINES) : [];
 ?>

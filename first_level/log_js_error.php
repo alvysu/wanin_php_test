@@ -1,5 +1,5 @@
 <?php
-$logFile = __DIR__ . '/tmp/status_log.txt';
+$logFile = __DIR__ . '/../tmp/status_log.txt';
 $data = json_decode(file_get_contents('php://input'), true);
 
 if ($data) {

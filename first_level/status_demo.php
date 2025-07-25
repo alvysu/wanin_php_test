@@ -90,7 +90,7 @@ if ($code !== '200' && $code !== 'debug500') {
     </ul>
 
     <p>你也可以手動改網址列，例如：<br>
-    <code>http://localhost:8081/status_demo.php?code=500</code></p>
+    <code>https://wanin-php-test.onrender.com/first_level/status_demo.php?code=500</code></p>
 
     <hr>
     <h2>🔧 測試 JS 錯誤：</h2>

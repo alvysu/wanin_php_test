@@ -10,23 +10,23 @@
 
   <h3>GET：</h3>
   <ul>
-    <li><a href="http://localhost:8081/students.php" target="_blank">查詢全部學生</a></li>
-    <li><a href="http://localhost:8081/students.php?id=1" target="_blank">查詢 ID=1 的學生</a></li>
+    <li><a href="https://wanin-php-test.onrender.com/first_level/students.php" target="_blank">查詢全部學生</a></li>
+    <li><a href="https://wanin-php-test.onrender.com/first_level/students.php?id=1" target="_blank">查詢 ID=1 的學生</a></li>
   </ul>
 
   <h3>POST / PUT / DELETE：</h3>
   <p>請使用 Postman / curl 操作：</p>
   <pre>
 新增學生（POST）：
-POST http://localhost:8081/students.php
+POST https://wanin-php-test.onrender.com/first_level/students.php
 Body (x-www-form-urlencoded): name=Jack&score=77
 
 更新學生（PUT）：
-PUT http://localhost:8081/students.php?id=1
+PUT https://wanin-php-test.onrender.com/first_level/students.php?id=1
 Body (x-www-form-urlencoded): score=95
 
 刪除學生（DELETE）：
-DELETE http://localhost:8081/students.php?id=2
+DELETE https://wanin-php-test.onrender.com/first_level/students.php?id=2
   </pre>
 
   <p>🔧 可以搭配 Postman 測試上述 API。</p>

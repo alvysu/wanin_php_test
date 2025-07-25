@@ -3,23 +3,14 @@
 
 // ✅ 自動判斷 log 寫入路徑（本機 or Render）
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
-
 $logFile = $isLocal
-    ? __DIR__ . '/../tmp/status_log.txt'     // ✅ 本機用相對路徑
-    : __DIR__ . '/tmp/status_log.txt';        // ✅ 部署用相對於 Docker COPY 結構
+    ? __DIR__ . '/../tmp/status_log.txt'
+    : __DIR__ . '/tmp/status_log.txt';   // ← 用 __DIR__ 相對就不會錯
 
-// ✅ 僅在本機建立資料夾
-if ($isLocal) {
-    $logDir = dirname($logFile);
-    if (!is_dir($logDir)) {
-        mkdir($logDir, 0777, true);
-    }
+if ($isLocal && !is_dir(dirname($logFile))) {
+    mkdir(dirname($logFile), 0777, true);
 }
 
-// ✅ 若 log 檔不存在，先建立空檔案（避免 Render 報錯）
-if (!file_exists($logFile)) {
-    file_put_contents($logFile, "");
-}
 
 
 

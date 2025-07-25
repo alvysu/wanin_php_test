@@ -4,3 +4,8 @@
 Stack trace:
 #0 {main}
   thrown in /var/www/html/test/first_level/status_demo.php on line 71
+[2025-07-25 15:41:07] Log OK
+[2025-07-25 15:41:07] 狀態碼: 500 | IP: 10.0.2.100 | URL: /first_level/status_demo.php?code=500
+[2025-07-25 15:41:10] Log OK
+[2025-07-25 15:41:10] 狀態碼: 500 | IP: 10.0.2.100 | URL: /first_level/status_demo.php?code=500
+[2025-07-25 15:41:27] 狀態碼: 500 | IP: 10.0.2.100 | URL: /first_level/status_demo.php?code=500

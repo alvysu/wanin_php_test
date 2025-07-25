@@ -1,8 +1,8 @@
 services:
   - type: web
-    name: wanin-php-demo
+    name: php-test-app
     env: docker
-    plan: free
-    branch: main
     repo: https://github.com/alvysu/wanin_php_test
-    dockerfilePath: ./Dockerfile
+    branch: main
+    dockerfilePath: Dockerfile
+    plan: free

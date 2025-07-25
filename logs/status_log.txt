@@ -3,3 +3,29 @@
 [2025-07-25 10:40:54] 狀態碼: 500 | IP: 10.0.2.100 | URL: /status_demo.php?code=500
 [2025-07-25 10:41:01] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
 [2025-07-25 10:41:10] 狀態碼: 999 | IP: 10.0.2.100 | URL: /status_demo.php?code=999
+[2025-07-25 10:57:50] 狀態碼: 998 | IP: 10.0.2.100 | URL: /status_demo.php?code=998
+[2025-07-25 10:57:54] 狀態碼: 998 | IP: 10.0.2.100 | URL: /status_demo.php?code=998
+[2025-07-25 11:11:39] 狀態碼: 998 | IP: 10.0.2.100 | URL: /status_demo.php?code=998
+[2025-07-25 11:16:32] 狀態碼: 500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=500
+[2025-07-25 11:16:33] 狀態碼: 500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=500
+[2025-07-25 11:16:34] 狀態碼: 500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=500
+[2025-07-25 11:16:43] 狀態碼: 500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=500
+[2025-07-25 11:16:51] 狀態碼: 500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=500
+[2025-07-25 11:16:59] 狀態碼: 404 | 類型: Client Error | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:18:11] 狀態碼: debug500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=debug500
+[2025-07-25 11:18:49] 狀態碼: debug500 | 類型: Server Error | IP: 10.0.2.100 | URL: /status_demo.php?code=debug500
+[2025-07-25 11:21:19] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:21:20] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:21:20] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:21:33] 致命錯誤：Uncaught Error: Call to undefined function undefined_function() in /var/www/html/test/status_demo.php:52
+Stack trace:
+#0 {main}
+  thrown in /var/www/html/test/status_demo.php on line 52
+[2025-07-25 11:21:51] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:36:18] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:36:20] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:36:20] 狀態碼: 404 | IP: 10.0.2.100 | URL: /status_demo.php?code=404
+[2025-07-25 11:38:21] JS 錯誤：Uncaught TypeError: Cannot read properties of undefined (reading 'map') in http://localhost:8081/status_demo.php on line 31, column 13
+Stack: TypeError: Cannot read properties of undefined (reading 'map')
+    at triggerError (http://localhost:8081/status_demo.php:31:13)
+    at HTMLButtonElement.onclick (http://localhost:8081/status_demo.php:26:38)

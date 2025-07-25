@@ -35,6 +35,6 @@ $logs = file_exists($logFile) ? file($logFile, FILE_IGNORE_NEW_LINES) : [];
         </pre>
     <?php endif; ?>
 
-    <p><a href="status_demo.php?code=500">🔁 回到狀態碼測試頁</a></p>
+    <p><a href="status_demo.php">🔁 回到狀態碼測試頁</a></p>
 </body>
 </html>

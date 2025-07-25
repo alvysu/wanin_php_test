@@ -1,19 +1,14 @@
 <?php
-// log_js_error.php
+// ✅ 統一 log 檔案路徑（與 log_viewer.php、status_demo.php 一致）
+$logFile = __DIR__ . '/status_log.txt';
 
-// 判斷是否在本地環境（localhost 或 CLI）
-$isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
-$logFile = $isLocal
-    ? __DIR__ . '/../tmp/status_log.txt'
-    : '/var/www/html/tmp/status_log.txt';
-
-
-// ✅ 若資料夾不存在，自動建立
-if (!file_exists(dirname($logFile))) {
-    mkdir(dirname($logFile), 0777, true);
+// ✅ 自動建立 log 資料夾（通常這裡不需要，但保留容錯）
+$logDir = dirname($logFile);
+if (!is_dir($logDir)) {
+    mkdir($logDir, 0777, true);
 }
 
-// 取得 POST JSON 資料
+// ✅ 接收 POST 傳入的 JSON 錯誤資料
 $data = json_decode(file_get_contents('php://input'), true);
 
 if ($data) {

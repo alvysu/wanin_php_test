@@ -1,18 +1,13 @@
 <?php
-// 判斷本地環境
+// ✅ 判斷是否為本地
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
 
-// 決定 log 路徑
-$logFile = $isLocal
-    ? __DIR__ . '/../tmp/status_log.txt'
-    : '/var/www/html/tmp/status_log.txt';
+// ✅ log 放在與程式同層（不論本地/部署都共用）
+$logFile = __DIR__ . '/status_log.txt';
 
-// ⚠️ 只在本地才 mkdir
-if ($isLocal) {
-    $logDir = dirname($logFile);
-    if (!is_dir($logDir)) {
-        mkdir($logDir, 0777, true);
-    }
+// ✅ 若為本地可嘗試建立資料夾（但這邊已無必要）
+if ($isLocal && !file_exists($logFile)) {
+    file_put_contents($logFile, ""); // 本地環境沒檔案時可新建
 }
 
 // 讀取 log

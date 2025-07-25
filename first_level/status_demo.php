@@ -7,10 +7,14 @@ $logFile = $isLocal
     ? __DIR__ . '/../tmp/status_log.txt'
     : '/var/www/html/tmp/status_log.txt';
 
-// ✅ 自動建立路徑（避免 log 寫入失敗）
-if (!file_exists(dirname($logFile))) {
-    mkdir(dirname($logFile), 0777, true);
+// ✅ 僅在本機執行 mkdir，部署環境不能寫入 /var/www/html
+if ($isLocal) {
+    $logDir = dirname($logFile);
+    if (!is_dir($logDir)) {
+        mkdir($logDir, 0777, true); // 只在本機建立資料夾
+    }
 }
+
 
 
 

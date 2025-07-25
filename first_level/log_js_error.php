@@ -1,6 +1,7 @@
 <?php
 // ✅ 統一 log 檔案路徑（與 log_viewer.php、status_demo.php 一致）
-$logFile = __DIR__ . '/status_log.txt';
+$logFile = '/var/www/html/status_log.txt';
+
 
 // ✅ 自動建立 log 資料夾（通常這裡不需要，但保留容錯）
 $logDir = dirname($logFile);

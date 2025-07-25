@@ -1,6 +1,7 @@
 <?php
 // ✅ log 路徑（不論本機或部署，直接在同層）
-$logFile = __DIR__ . '/status_log.txt';
+$logFile = '/var/www/html/status_log.txt';
+
 
 // 讀取 log 檔
 $logs = file_exists($logFile) ? file($logFile, FILE_IGNORE_NEW_LINES) : [];

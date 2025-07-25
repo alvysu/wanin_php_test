@@ -3,7 +3,8 @@
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
 
 // ✅ log 放在與程式同層（不論本地/部署都共用）
-$logFile = __DIR__ . '/status_log.txt';
+$logFile = '/var/www/html/status_log.txt';
+
 
 // ✅ 若為本地可嘗試建立資料夾（但這邊已無必要）
 if ($isLocal && !file_exists($logFile)) {

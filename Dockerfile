@@ -15,7 +15,4 @@ RUN chmod -R 777 /var/www/html/tmp
 # 開啟 Apache rewrite 模組（如果有用 .htaccess）
 RUN a2enmod rewrite
 
-# 保證至少有 index.php 讓 Render 判定服務成功
-RUN echo "<?php echo 'Hello from Render'; ?>" > /var/www/html/index.php
-
 EXPOSE 80

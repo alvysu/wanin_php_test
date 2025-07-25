@@ -20,12 +20,12 @@
     <h1>🚀 Wanin PHP 測試首頁</h1>
     <p>以下是你目前已建立的頁面：</p>
     <ul>
-        <li><a href="first_level/log_viewer.php">Log Viewer - 錯誤紀錄</a></li>
-        <li><a href="first_level/protocol_check.php">HTTP/HTTPS 協議</a></li>
-        <li><a href="first_level/request_response.php">Request & Response 生命週期</a></li>
-        <li><a href="first_level/status_demo.php">status_demo.php</a></li>
-        <li><a href="first_level/students_ui.html">HTTP 方法（GET, POST, PUT, DELETE）</a></li>
-        <li><a href="first_level/test.php">test</a></li>
+        <li><a href="log_viewer.php">Log Viewer - 錯誤紀錄</a></li>
+        <li><a href="protocol_check.php">HTTP/HTTPS 協議</a></li>
+        <li><a href="request_response.php">Request & Response 生命週期</a></li>
+        <li><a href="status_demo.php">status_demo.php</a></li>
+        <li><a href="students_ui.html">HTTP 方法（GET, POST, PUT, DELETE）</a></li>
+        <li><a href="test.php">test</a></li>
     </ul>
 
     <hr>

@@ -4,10 +4,9 @@
 // 判斷是否在本地環境（localhost 或 CLI）
 $isLocal = in_array($_SERVER['REMOTE_ADDR'], ['127.0.0.1', '::1']) || php_sapi_name() === 'cli';
 
-// 動態設定 log 檔路徑
 $logFile = $isLocal
-    ? __DIR__ . '/../tmp/status_log.txt'        // local: first_level/../tmp
-    : '/var/www/html/tmp/status_log.txt';       // Docker: 明確位置
+    ? __DIR__ . '/../tmp/status_log.txt'     // ✅ 本機用相對路徑
+    : __DIR__ . '/tmp/status_log.txt';        // ✅ 部署用相對於 Docker COPY 結構
 
 // ✅ 若資料夾不存在，自動建立
 if (!file_exists(dirname($logFile))) {

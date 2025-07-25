@@ -2,7 +2,7 @@
 // status_demo.php
 
 // === ✅ 1. 設定錯誤紀錄 ===
-$logFile = __DIR__ . '/logs/status_log.txt';
+$logFile = __DIR__ . '/tmp/status_log.txt';
 
 // 一般 PHP 錯誤
 set_error_handler(function($errno, $errstr, $errfile, $errline) use ($logFile) {

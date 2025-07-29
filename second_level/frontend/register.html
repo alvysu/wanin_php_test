@@ -1,0 +1,25 @@
+<form id="registerForm">
+  <input type="text" name="username" placeholder="帳號" required><br>
+  <input type="password" name="password" placeholder="密碼" required><br>
+  <input type="email" name="email" placeholder="信箱" required><br>
+  <button type="submit">註冊</button>
+</form>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const payload = {
+    username: form.username.value,
+    password: form.password.value,
+    email: form.email.value
+  };
+const res = await fetch('http://localhost:8081/second_level/backend/api/register.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
+  });
+  const result = await res.json();
+  alert(result.message);
+});
+</script>

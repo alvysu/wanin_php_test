@@ -7,6 +7,7 @@ RUN mkdir -p /var/www/html && touch /var/www/html/status_log.txt
 COPY first_level/ /var/www/html/
 
 # 開放寫入權限（非常關鍵）
+#RUN chmod 666 /var/www/html/status_log.txt​
 RUN chown -R www-data:www-data /var/www/html
 
 # 啟用 mod_rewrite（如有 .htaccess）

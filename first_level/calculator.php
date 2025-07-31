@@ -85,15 +85,23 @@
     <?php
     if (isset($_POST['array_ops'])) {
         $input = $_POST['array_input'];
-        $array = array_filter(array_map('trim', explode(',', $input)), 'is_numeric');
+
+        // ✅ 使用 array_map() 去除空格
+        $raw_array = explode(',', $input);
+        $trimmed_array = array_map('trim', $raw_array);
+
+        // ✅ 使用 array_filter() 過濾非數字
+        $array = array_filter($trimmed_array, 'is_numeric');
 
         if (count($array) > 0) {
             echo "<h3>原始陣列：</h3>";
             echo implode(', ', $array);
 
+            // ✅ 陣列排序
             $sorted = $array;
             sort($sorted);
 
+            // ✅ 陣列反轉
             $reversed = array_reverse($array);
             $sum = array_sum($array);
             $max = max($array);
@@ -102,10 +110,20 @@
             echo "<h3>反轉陣列：</h3>" . implode(', ', $reversed);
             echo "<h3>總和：</h3>$sum";
             echo "<h3>最大值：</h3>$max";
+
+            // ✅ 使用 in_array() 判斷是否有數字 7
+            $has_seven = in_array(7, $array) ? "✅ 有包含數字 7" : "❌ 沒有包含數字 7";
+            echo "<h3>是否包含數字 7：</h3>$has_seven";
+
+            // ✅ 使用 array_merge() 合併一組預設陣列（範例：固定附加 [100, 200]）
+            $merged = array_merge($array, [100, 200]);
+            echo "<h3>合併 [100, 200] 後：</h3>" . implode(', ', $merged);
+
         } else {
             echo "<p style='color:red'>請輸入有效的數字陣列</p>";
         }
     }
     ?>
+
 </body>
 </html>

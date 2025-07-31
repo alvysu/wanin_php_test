@@ -1,0 +1,15 @@
+{
+    "name": "alvy/practice_composer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "alvysu",
+            "email": "alvysu1020@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "ramsey/uuid": "^4.2",
+        "symfony/mime": "^5.4"
+    }
+}
